@@ -37,8 +37,10 @@
 <script>
 export default {
   name: 'Toolbar',
-  props: {
-    toggle: Function
+  methods: {
+    toggle: function () {
+      this.$emit('toggleSidebar')
+    }
   }
 }
 </script>

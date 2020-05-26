@@ -1,7 +1,7 @@
 
 <template>
   <q-drawer
-    v-model="leftDrawerOpen"
+    v-model="open"
     show-if-above
     :width="200"
     :breakpoint="400"
@@ -101,9 +101,19 @@ export default {
   props: {
     leftDrawerOpen: Boolean
   },
-  components: [
+  components: {
     EssentialLink
-  ],
+  },
+  computed: {
+    open: {
+      get () {
+        return this.leftDrawerOpen
+      },
+      set (val) {
+        this.$emit('toggleSidabar', val)
+      }
+    }
+  },
   data () {
     return {
       essentialLinks: [
