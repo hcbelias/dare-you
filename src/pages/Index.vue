@@ -4,6 +4,8 @@
       alt="Quasar logo"
       src="~assets/quasar-logo-full.svg"
     >
+    <p>{{ $t("general.title") }}</p>
+
   </q-page>
 </template>
 

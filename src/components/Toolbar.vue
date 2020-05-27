@@ -11,31 +11,19 @@
         @click="toggle"
       />
 
-      <q-toolbar-title>Dare you</q-toolbar-title>
-      <q-btn
-        flat
-        round
-        dense
-        icon="message"
-      />
-      <q-btn
-        flat
-        round
-        dense
-        icon="account_circle"
-      />
-      <q-btn
-        flat
-        round
-        dense
-        icon="settings"
-      />
+      <q-toolbar-title>{{ $t("general.title") }}</q-toolbar-title>
+
+      <LanguageSelection />
     </q-toolbar>
   </q-header>
 </template>
 
 <script>
+import LanguageSelection from './LanguageSelection'
 export default {
+  components: {
+    LanguageSelection
+  },
   name: 'Toolbar',
   methods: {
     toggle: function () {
