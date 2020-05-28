@@ -14,7 +14,6 @@
   display: none;
 }
 .img-background {
-  background: #fff url(../statics/background-img.jpg);
   /* Full height */
   height: 100%;
   /* Center and scale the image nicely */

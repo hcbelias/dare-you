@@ -5,10 +5,6 @@
         class="text-center"
         style="color:white"
       >
-        <img
-          src="statics/quasar-logo.png"
-          width="130em"
-        />
         <p class="q-display-1 text-weight-bolder q-pt-lg">Quasar + Hello.js</p>
         <p class="q-title text-weight-bold q-ma-none">Login com redes sociais</p>
       </div>
