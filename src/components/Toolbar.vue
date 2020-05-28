@@ -8,11 +8,15 @@
         round
         icon="menu"
         aria-label="Menu"
+        class="q-mr-sm"
         @click="toggle"
       />
 
+      <q-separator
+        vertical
+        inset
+      />
       <q-toolbar-title>{{ $t("general.title") }}</q-toolbar-title>
-
       <LanguageSelection />
     </q-toolbar>
   </q-header>
