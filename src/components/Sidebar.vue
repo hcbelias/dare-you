@@ -13,7 +13,18 @@
           :key="link.title"
           v-bind="link"
         />
+        <q-item-label
+          header
+          class="text-grey-8"
+        >
+          {{ $t('sidebar.others') }}
+        </q-item-label>
 
+        <SidebarSection
+          v-for="link in otherLinks"
+          :key="link.title"
+          v-bind="link"
+        />
       </q-list>
     </q-scroll-area>
 
@@ -76,23 +87,26 @@ export default {
           caption: this.$t('sidebar.friends.caption')
         },
         {
-          icon: 'messages',
-          title: this.$t('sidebar.messages'),
-          caption: 'dfdf'
+          icon: 'share',
+          title: this.$t('sidebar.share.title'),
+          caption: this.$t('sidebar.share.caption')
+        }
+      ],
+      otherLinks: [
+        {
+          icon: 'comment',
+          title: this.$t('sidebar.messages')
         },
         {
-          icon: 'personal',
-          title: this.$t('sidebar.account'),
-          caption: 'sd'
+          icon: 'account_circle',
+          title: this.$t('sidebar.account')
         }, {
           icon: 'settings',
-          title: this.$t('sidebar.settings'),
-          caption: 'ds'
+          title: this.$t('sidebar.settings')
         },
         {
           icon: 'logout',
-          title: this.$t('sidebar.logout'),
-          caption: 'ds'
+          title: this.$t('sidebar.logout')
         }
       ]
     }

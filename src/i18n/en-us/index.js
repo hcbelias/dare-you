@@ -4,7 +4,7 @@
 export default {
   failed: 'Action failed',
   general: {
-    title: 'Test'
+    title: 'Dare you'
   },
   sidebar: {
     account: 'Account',
@@ -14,7 +14,12 @@ export default {
     main: { title: 'Dare you', caption: 'Dare yourself now!' },
     messages: 'Messages',
     others: 'Others',
-    settings: 'Settings'
+    settings: 'Settings',
+    share: {
+      title: 'Share',
+      caption: 'Share your dare'
+    }
+
   },
   success: 'Action was successful'
 }
