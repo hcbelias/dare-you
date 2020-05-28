@@ -1,6 +1,7 @@
 <template>
   <q-item
     clickable
+    v-ripple
     tag="a"
     target="_blank"
     :href="link"
@@ -23,7 +24,7 @@
 
 <script>
 export default {
-  name: 'EssentialLink',
+  name: 'SidebarSection',
   props: {
     title: {
       type: String,

@@ -7,12 +7,14 @@ export default {
     title: 'Test'
   },
   sidebar: {
-    main: 'Dare',
-    discover: 'Discover',
-    friends: 'Friends',
+    account: 'Account',
+    challenges: { title: 'Challenges', caption: 'Dare challenges' },
+    friends: { title: 'Friends', caption: 'Dare your friends' },
+    logout: 'Logout',
+    main: { title: 'Dare you', caption: 'Dare yourself now!' },
     messages: 'Messages',
-    settings: 'Settings',
-    account: 'Account'
+    others: 'Others',
+    settings: 'Settings'
   },
   success: 'Action was successful'
 }

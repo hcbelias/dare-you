@@ -8,69 +8,12 @@
   >
     <q-scroll-area style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
       <q-list padding>
-        <q-item
-          clickable
-          v-ripple
-        >
-          <q-item-section avatar>
-            <q-icon name="inbox" />
-          </q-item-section>
-
-          <q-item-section>
-            Inbox
-          </q-item-section>
-        </q-item>
-
-        <q-item
-          active
-          clickable
-          v-ripple
-        >
-          <q-item-section avatar>
-            <q-icon name="star" />
-          </q-item-section>
-
-          <q-item-section>
-            Star
-          </q-item-section>
-        </q-item>
-
-        <q-item
-          clickable
-          v-ripple
-        >
-          <q-item-section avatar>
-            <q-icon name="send" />
-          </q-item-section>
-
-          <q-item-section>
-            Send
-          </q-item-section>
-        </q-item>
-
-        <q-item
-          clickable
-          v-ripple
-        >
-          <q-item-section avatar>
-            <q-icon name="drafts" />
-          </q-item-section>
-
-          <q-item-section>
-            Drafts
-          </q-item-section>
-        </q-item>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
+        <SidebarSection
+          v-for="link in mainLinks"
           :key="link.title"
           v-bind="link"
         />
+
       </q-list>
     </q-scroll-area>
 
@@ -94,7 +37,7 @@
 </template>
 
 <script>
-import EssentialLink from './EssentialLink'
+import SidebarSection from './SidebarSection'
 
 export default {
   name: 'Sidebar',
@@ -102,7 +45,7 @@ export default {
     leftDrawerOpen: Boolean
   },
   components: {
-    EssentialLink
+    SidebarSection
   },
   computed: {
     open: {
@@ -116,48 +59,40 @@ export default {
   },
   data () {
     return {
-      essentialLinks: [
+      mainLinks: [
         {
-          title: 'Docs',
-          caption: 'quasar.dev',
-          icon: 'school',
-          link: 'https://quasar.dev'
+          icon: 'send',
+          title: this.$t('sidebar.main.title'),
+          caption: this.$t('sidebar.main.caption')
         },
         {
-          title: 'Github',
-          caption: 'github.com/quasarframework',
-          icon: 'code',
-          link: 'https://github.com/quasarframework'
+          icon: 'star',
+          title: this.$t('sidebar.challenges.title'),
+          caption: this.$t('sidebar.challenges.caption')
         },
         {
-          title: 'Discord Chat Channel',
-          caption: 'chat.quasar.dev',
-          icon: 'chat',
-          link: 'https://chat.quasar.dev'
+          icon: 'supervisor_account',
+          title: this.$t('sidebar.friends.title'),
+          caption: this.$t('sidebar.friends.caption')
         },
         {
-          title: 'Forum',
-          caption: 'forum.quasar.dev',
-          icon: 'record_voice_over',
-          link: 'https://forum.quasar.dev'
+          icon: 'messages',
+          title: this.$t('sidebar.messages'),
+          caption: 'dfdf'
         },
         {
-          title: 'Twitter',
-          caption: '@quasarframework',
-          icon: 'rss_feed',
-          link: 'https://twitter.quasar.dev'
+          icon: 'personal',
+          title: this.$t('sidebar.account'),
+          caption: 'sd'
+        }, {
+          icon: 'settings',
+          title: this.$t('sidebar.settings'),
+          caption: 'ds'
         },
         {
-          title: 'Facebook',
-          caption: '@QuasarFramework',
-          icon: 'public',
-          link: 'https://facebook.quasar.dev'
-        },
-        {
-          title: 'Quasar Awesome',
-          caption: 'Community Quasar projects',
-          icon: 'favorite',
-          link: 'https://awesome.quasar.dev'
+          icon: 'logout',
+          title: this.$t('sidebar.logout'),
+          caption: 'ds'
         }
       ]
     }
