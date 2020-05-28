@@ -17,9 +17,7 @@
   /* Full height */
   height: 100%;
   /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #283547;
   border: solid 1px black;
 }
 </style>
