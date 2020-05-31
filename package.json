@@ -11,15 +11,15 @@
     "build": "quasar build",
     "build:android": "quasar build -m android",
     "build:pwa": "quasar build -m pwa",
-    "dev": "quasar dev",
+    "start": "quasar dev",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ./",
-    "start": "node server.js",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "xcopy": "xcopy dist\\spa .\\..\\dare-server\\public /S /H",
+    "deploy:spa": "npm run build && npm run xcopy"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
-    "hellojs": "^1.18.4",
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0"
   },

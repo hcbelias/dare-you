@@ -18,13 +18,18 @@
 </template>
 
 <script>
+import Config from '../config'
+
 export default {
   name: 'Login',
   methods: {
     auth (network) {
-      this.$hello(network).login({ scope: 'friends' })
+      const path = `${Config.API_URL}/auth/${network}`
+      debugger
+      this.$axios.get(path)
         .then(() => {
-          this.$router.push('perfil')
+          debugger
+          this.$router.push('profile')
         })
     }
   }
