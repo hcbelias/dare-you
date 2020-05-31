@@ -1,21 +1,29 @@
 const routes = [
   {
-    path: '/',
+    path: '/dashboard',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/Index.vue') }]
+    children: [{ path: '', component: () => import('pages/DashboardPage.vue') }],
+    meta: {
+      auth: true
+    }
   },
   {
     path: '/me',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
-      { path: '/profile', component: () => import('pages/UserAccount.vue') }
-    ]
+      { path: '', component: () => import('pages/UserAccountPage.vue') }
+    ],
+    meta: {
+      auth: true
+    }
   },
   {
     path: '/login',
     component: () => import('layouts/LoginLayout.vue'),
-    children: [{ path: '', component: () => import('pages/Login.vue') }]
+    children: [{ path: '', component: () => import('pages/LoginPage.vue') }],
+    meta: {
+      guest: true
+    }
   }
 ]
 
@@ -23,8 +31,8 @@ const routes = [
 if (process.env.MODE !== 'ssr') {
   routes.push({
     path: '*',
-    children: [{ path: '', component: () => import('pages/Index.vue') }],
-    component: () => import('layouts/MainLayout.vue')
+    children: [{ path: '', component: () => import('pages/HomePage.vue') }],
+    component: () => import('layouts/HomeLayout.vue')
   })
 }
 

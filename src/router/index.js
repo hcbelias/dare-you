@@ -26,5 +26,22 @@ export default function (/* { store, ssrContext } */) {
     base: process.env.VUE_ROUTER_BASE
   })
 
+  Router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.auth)) {
+      if (localStorage.getItem('jwt') == null) {
+        next({
+          path: '/login',
+          params: { nextUrl: to.fullPath }
+        })
+      }
+    } else if (to.matched.some(record => record.meta.guest)) {
+      if (localStorage.getItem('jwt') !== null) {
+        next({ name: 'userboard' })
+      }
+    }
+
+    next()
+  })
+
   return Router
 }

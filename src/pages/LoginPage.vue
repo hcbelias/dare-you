@@ -21,7 +21,7 @@
 import Config from '../config'
 
 export default {
-  name: 'Login',
+  name: 'LoginPage',
   methods: {
     auth (network) {
       const path = `${Config.API_URL}/auth/${network}`
@@ -29,7 +29,7 @@ export default {
       this.$axios.get(path)
         .then(() => {
           debugger
-          this.$router.push('profile')
+          this.$router.push('me')
         })
     }
   }
